@@ -1,6 +1,6 @@
 const SplashPage = () => {
   return (
-    <main className="relative flex min-h-screen items-center justify-center overflow-hidden bg-[#53B175]  ">
+    <main className=" font-gilroy relative flex min-h-screen items-center justify-center overflow-hidden bg-[#53B175]  ">
       {/* Logo */}
       <section className="flex items-center gap-3  ">
         <div className="text-6xl text-white">
@@ -8,7 +8,7 @@ const SplashPage = () => {
         </div>
 
         <div>
-          <h1 className="text-6xl font-medium leading-none tracking-tight text-white font-gilroy ">
+          <h1 className="text-6xl font-extralight leading-none tracking-tight text-white ">
             nectar
           </h1>
           <p className="mt-1 text-center text-[14px] tracking-[0.3em] text-white">

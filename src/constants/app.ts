@@ -1,0 +1,8 @@
+export const APP_CONFIG = {
+  APP_NAME: "Nectar",
+  CURRENCY: "$",
+  DELIVERY_FEE: 2.99,
+  TAX_PERCENTAGE: 5,
+  FREE_DELIVERY_MIN_ORDER: 50,
+  DEFAULT_COUNTRY_CODE: "+880",
+};

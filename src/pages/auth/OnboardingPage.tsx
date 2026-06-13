@@ -9,7 +9,7 @@ const OnboardingPage = () => {
   };
 
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-white font-gilroy">
       {/* Mobile UI */}
       <section className="relative min-h-screen overflow-hidden lg:hidden">
         <img
@@ -25,7 +25,7 @@ const OnboardingPage = () => {
             <img src="./nectarIcon.svg" alt="nectar-icon" />
           </div>
 
-          <h1 className="text-[46px] font-semibold leading-[1.18] tracking-[-0.04em]">
+          <h1 className="text-[48px]  font-semibold leading-[1.18] tracking-[-0.04em]">
             Welcome
             <br />
             to our store
@@ -38,7 +38,7 @@ const OnboardingPage = () => {
           <button
             type="button"
             onClick={handleGetStarted}
-            className="mt-10 h-[67px] w-full rounded-[19px] bg-[#53B175] text-[18px] font-semibold text-white transition active:scale-[0.98]"
+            className="mt-10 h-16.75 w-full rounded-[19px] bg-[#53B175] text-[18px] font-semibold light text-white transition active:scale-[0.98]"
           >
             Get Started
           </button>
