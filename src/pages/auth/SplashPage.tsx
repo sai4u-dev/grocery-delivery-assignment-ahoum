@@ -1,5 +1,3 @@
-// src/pages/auth/SplashPage.tsx
-
 const SplashPage = () => {
   return (
     <main className="relative flex min-h-screen items-center justify-center overflow-hidden bg-[#53B175]  ">
