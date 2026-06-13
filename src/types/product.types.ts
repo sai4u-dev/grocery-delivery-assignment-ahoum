@@ -1,14 +1,15 @@
-export type ProductCategory =
-  | "Fresh Fruits & Vegetables"
-  | "Cooking Oil & Ghee"
-  | "Meat & Fish"
-  | "Bakery & Snacks"
-  | "Dairy & Eggs"
-  | "Beverages"
-  | "Eggs"
-  | "Noodles & Pasta"
-  | "Chips & Crisps"
-  | "Fast Food";
+export enum ProductCategory {
+  FRUITS_VEGETABLES = "Fresh Fruits & Vegetables",
+  COOKING_OIL_GHEE = "Cooking Oil & Ghee",
+  MEAT_FISH = "Meat & Fish",
+  BAKERY_SNACKS = "Bakery & Snacks",
+  DAIRY_EGGS = "Dairy & Eggs",
+  BEVERAGES = "Beverages",
+  EGGS = "Eggs",
+  NOODLES_PASTA = "Noodles & Pasta",
+  CHIPS_CRISPS = "Chips & Crisps",
+  FAST_FOOD = "Fast Food",
+}
 
 export interface Product {
   id: string;
