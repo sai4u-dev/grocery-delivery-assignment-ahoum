@@ -8,7 +8,7 @@ const SplashPage = () => {
         </div>
 
         <div>
-          <h1 className="text-6xl font-medium leading-none tracking-tight text-white font-['Inter',sans-serif] text-normal">
+          <h1 className="text-6xl font-medium leading-none tracking-tight text-white font-gilroy ">
             nectar
           </h1>
           <p className="mt-1 text-center text-[14px] tracking-[0.3em] text-white">
