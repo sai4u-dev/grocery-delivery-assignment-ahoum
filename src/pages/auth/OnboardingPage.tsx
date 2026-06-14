@@ -5,7 +5,7 @@ const OnboardingPage = () => {
   const navigate = useNavigate();
 
   const handleGetStarted = () => {
-    navigate("/signin");
+    navigate("/login");
   };
 
   return (

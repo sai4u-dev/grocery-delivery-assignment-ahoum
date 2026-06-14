@@ -6,7 +6,6 @@ import { AppLayout, AuthLayout } from "../components/layout";
 
 import SplashPage from "../pages/auth/SplashPage";
 import OnboardingPage from "../pages/auth/OnboardingPage";
-import SignInPage from "../pages/auth/SignInPage";
 import MobileNumberPage from "../pages/auth/MobileNumberPage";
 import VerificationPage from "../pages/auth/VerificationPage";
 import LocationPage from "../pages/auth/LocationPage";
@@ -22,15 +21,17 @@ import FavoritesPage from "../pages/main/FavoritesPage";
 import CheckoutPage from "../pages/checkout/CheckoutPage";
 import OrderSuccessPage from "../pages/checkout/OrderSuccessPage";
 import OrderFailedPage from "../pages/checkout/OrderFailedPage";
+import SignupPage from "@/pages/auth/SignupPage";
+import LoginPage from "@/pages/auth/LoginPage";
 
 const AppRoutes = () => {
   return (
     <Routes>
-      <Route path="/home" element={<HomePage />} />
       <Route element={<AuthLayout />}>
         <Route path={ROUTES.SPLASH} element={<SplashPage />} />
         <Route path={ROUTES.ONBOARDING} element={<OnboardingPage />} />
-        <Route path={ROUTES.SIGN_IN} element={<SignInPage />} />
+        <Route path={ROUTES.LOGIN} element={<LoginPage />} />
+        <Route path={ROUTES.SIGN_UP} element={<SignupPage />} />
         <Route path={ROUTES.MOBILE_NUMBER} element={<MobileNumberPage />} />
         <Route path={ROUTES.VERIFICATION} element={<VerificationPage />} />
         <Route path={ROUTES.LOCATION} element={<LocationPage />} />

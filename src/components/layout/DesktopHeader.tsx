@@ -6,7 +6,9 @@ const DesktopHeader = () => {
     <header className="sticky top-0 z-40 hidden border-b border-[#E2E2E2] bg-white/90 backdrop-blur lg:block">
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-8">
         <NavLink to={ROUTES.HOME} className="flex items-center gap-3">
-          <span className="text-3xl">🥕</span>
+          <span className="text-3xl">
+            <img src="../nectarOrange.svg" alt="nectar-icon" />
+          </span>
           <span className="text-2xl font-bold text-[#181725]">nectar</span>
         </NavLink>
 
@@ -22,6 +24,9 @@ const DesktopHeader = () => {
           </NavLink>
           <NavLink to={ROUTES.CART} className="hover:text-[#53B175]">
             Cart
+          </NavLink>
+          <NavLink to={ROUTES.PROFILE} className="hover:text-[#53B175]">
+            Profile
           </NavLink>
         </nav>
       </div>

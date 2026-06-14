@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { products } from "../../data";
@@ -8,8 +8,19 @@ import { useFavoriteStore } from "../../store";
 import { ProductGrid } from "../../components/product";
 import { EmptyState, ScreenHeader } from "../../components/common";
 import { DesktopSidebar } from "../../components/layout";
+import SkeletonGrid from "@/components/common/SkeletonGrid";
 
 const FavoritesPage = () => {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 1500);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   const navigate = useNavigate();
   const favoriteIds = useFavoriteStore((state) => state.favoriteIds);
 
@@ -38,7 +49,11 @@ const FavoritesPage = () => {
       <section className="px-6 pb-28 lg:hidden">
         <ScreenHeader title="Favourite" showBackButton={false} />
 
-        <ProductGrid products={favoriteProducts} />
+        {loading ? (
+          <SkeletonGrid count={8} />
+        ) : (
+          <ProductGrid products={favoriteProducts} />
+        )}
       </section>
 
       {/* Desktop */}
@@ -56,7 +71,11 @@ const FavoritesPage = () => {
             </p>
 
             <div className="mt-8">
-              <ProductGrid products={favoriteProducts} />
+              {loading ? (
+                <SkeletonGrid count={8} />
+              ) : (
+                <ProductGrid products={favoriteProducts} />
+              )}
             </div>
           </div>
         </div>

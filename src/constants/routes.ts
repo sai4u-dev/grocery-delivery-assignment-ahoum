@@ -1,8 +1,9 @@
 export const ROUTES = {
   SPLASH: "/",
   ONBOARDING: "/onboarding",
+  PROFILE: "/profile",
 
-  SIGN_IN: "/signin",
+  LOGIN: "/login",
   SIGN_UP: "/signup",
   MOBILE_NUMBER: "/number",
   VERIFICATION: "/verification",

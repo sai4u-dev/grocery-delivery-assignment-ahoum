@@ -27,7 +27,9 @@ const LocationPage = () => {
         </button>
 
         <div className="mt-16 text-center">
-          <div className="text-7xl">📍</div>
+          <div className="text-7xl flex justify-center">
+            <img src="./navigationMap.png" alt="location" />
+          </div>
 
           <h1 className="mt-10 text-[26px] font-semibold text-[#181725]">
             Select Your Location
@@ -80,7 +82,9 @@ const LocationPage = () => {
 
           <div className="rounded-[36px] bg-white p-10 shadow-xl">
             <div className="text-center">
-              <div className="text-7xl">📍</div>
+              <div className="text-7xl flex justify-center">
+                <img src="./navigationMap.png" alt="location" />
+              </div>
 
               <h2 className="mt-6 text-3xl font-bold text-[#181725]">
                 Select Your Location

@@ -1,116 +1,141 @@
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import signInImage from "../../assets/groceriesBag.png";
 
-const SignInPage = () => {
+import { ROUTES } from "../../constants";
+import { Button, Input } from "../../components/common";
+
+const SignupPage = () => {
   const navigate = useNavigate();
+
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   return (
     <main className="min-h-screen bg-white">
-      {/* Mobile */}
-      <section className="relative min-h-screen overflow-hidden px-6 lg:hidden">
-        <img
-          src={signInImage}
-          alt="Fresh groceries"
-          className="  w-full object-cover mx-6"
-        />
+      <section className="px-6 pb-10 pt-14 lg:hidden">
+        <button
+          type="button"
+          onClick={() => navigate(-1)}
+          className="text-3xl font-light text-[#181725]"
+        >
+          ‹
+        </button>
 
-        <div className="mt-6">
-          <h1 className="text-[26px] font-semibold leading-[1.35] text-[#181725]">
-            Get your groceries
-            <br />
-            with nectar
-          </h1>
-
-          <button
-            type="button"
-            onClick={() => navigate("/number")}
-            className="mt-8 flex w-full items-center gap-4 border-b border-[#E2E2E2] pb-5 text-left"
-          >
-            <span className="text-xl">🌐</span>
-            <span className="text-[18px] font-medium text-[#181725]">+880</span>
-          </button>
-
-          <p className="mt-10 text-center text-[14px] font-semibold text-[#828282]">
-            Or connect with social media
-          </p>
-
-          <div className="mt-8 space-y-5">
-            <button
-              type="button"
-              className="flex h-[67px] w-full items-center justify-center gap-8 rounded-[19px] bg-[#5383EC] text-[18px] font-semibold text-white transition active:scale-[0.98]"
-            >
-              <span className="text-3xl font-bold">G</span>
-              Continue with Google
-            </button>
-
-            <button
-              type="button"
-              className="flex h-[67px] w-full items-center justify-center gap-8 rounded-[19px] bg-[#4A66AC] text-[18px] font-semibold text-white transition active:scale-[0.98]"
-            >
-              <span className="text-3xl font-bold">f</span>
-              Continue with Facebook
-            </button>
+        <div className="mt-12 text-center">
+          <div className="text-5xl flex justify-center">
+            <img src="./nectarOrange.svg" alt="nectar-icon" />
           </div>
         </div>
 
-        <div className="absolute bottom-2 left-1/2 h-1 w-32 -translate-x-1/2 rounded-full bg-black/20" />
-      </section>
+        <div className="mt-16">
+          <h1 className="text-[26px] font-semibold text-[#181725]">Sign Up</h1>
 
-      {/* Desktop */}
-      <section className="hidden min-h-screen bg-[#F8FAFB] lg:block">
-        <div className="mx-auto grid min-h-screen max-w-7xl grid-cols-2 items-center gap-12 px-8 py-10">
-          <div className="relative h-[calc(100vh-80px)] overflow-hidden rounded-[40px] bg-white shadow-2xl">
-            <img
-              src={signInImage}
-              alt="Fresh groceries"
-              className="h-full w-full object-cover"
+          <p className="mt-3 text-[16px] text-[#7C7C7C]">
+            Enter your credentials to continue
+          </p>
+
+          <div className="mt-10 space-y-8">
+            <Input
+              label="Username"
+              value={name}
+              onChange={(event) => setName(event.target.value)}
+              placeholder="Afsar Hossen Shuvo"
+            />
+
+            <Input
+              label="Email"
+              value={email}
+              onChange={(event) => setEmail(event.target.value)}
+              placeholder="imshuvo97@gmail.com"
+              type="email"
+            />
+
+            <Input
+              label="Password"
+              value={password}
+              onChange={(event) => setPassword(event.target.value)}
+              placeholder="••••••••"
+              type="password"
             />
           </div>
 
-          <div className="flex justify-center">
-            <div className="w-full max-w-md rounded-[36px] bg-white p-10 shadow-xl">
-              <h1 className="text-5xl font-bold leading-tight tracking-[-0.04em] text-[#181725]">
-                Get your groceries
-                <br />
-                with nectar
-              </h1>
+          <p className="mt-6 text-[14px] leading-6 text-[#7C7C7C]">
+            By continuing you agree to our{" "}
+            <span className="font-semibold text-[#53B175]">
+              Terms of Service
+            </span>{" "}
+            and{" "}
+            <span className="font-semibold text-[#53B175]">Privacy Policy</span>
+            .
+          </p>
 
-              <button
-                type="button"
-                onClick={() => navigate("/number")}
-                className="mt-10 flex w-full items-center gap-4 border-b border-[#E2E2E2] pb-5 text-left"
-              >
-                <span className="text-xl">🌐</span>
-                <span className="text-[18px] font-medium text-[#181725]">
-                  +880
-                </span>
-              </button>
-
-              <p className="mt-10 text-center text-[14px] font-semibold text-[#828282]">
-                Or connect with social media
-              </p>
-
-              <div className="mt-8 space-y-5">
-                <button className="flex h-[67px] w-full items-center justify-center gap-8 rounded-[19px] bg-[#5383EC] text-[18px] font-semibold text-white">
-                  <span className="text-3xl font-bold">G</span>
-                  Continue with Google
-                </button>
-
-                <button className="flex h-[67px] w-full items-center justify-center gap-8 rounded-[19px] bg-[#4A66AC] text-[18px] font-semibold text-white">
-                  <span className="text-3xl font-bold">f</span>
-                  Continue with Facebook
-                </button>
-              </div>
-
-              <p className="mt-6 text-center text-sm text-[#7C7C7C]">
-                Sign in quickly and continue shopping fresh groceries.
-              </p>
-            </div>
+          <div className="mt-8">
+            <Button onClick={() => navigate(ROUTES.LOCATION)}>Sign Up</Button>
           </div>
+
+          <p className="mt-6 text-center text-[14px] font-semibold text-[#181725]">
+            Already have an account?{" "}
+            <button
+              type="button"
+              onClick={() => navigate(ROUTES.LOGIN)}
+              className="text-[#53B175]"
+            >
+              Signin
+            </button>
+          </p>
+        </div>
+      </section>
+
+      <section className="hidden min-h-screen bg-[#F8FAFB] lg:flex lg:items-center lg:justify-center">
+        <div className="w-full max-w-md rounded-[36px] bg-white p-10 shadow-xl">
+          <div className="text-center text-5xl flex justify-center">
+            <img src="./nectarOrange.svg" alt="nectar-icon" />
+          </div>
+
+          <h1 className="mt-10 text-4xl font-bold text-[#181725]">Sign Up</h1>
+
+          <p className="mt-3 text-[#7C7C7C]">
+            Enter your credentials to continue
+          </p>
+
+          <div className="mt-10 space-y-8">
+            <Input
+              label="Username"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
+            <Input
+              label="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              type="email"
+            />
+            <Input
+              label="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              type="password"
+            />
+          </div>
+
+          <div className="mt-8">
+            <Button onClick={() => navigate(ROUTES.LOCATION)}>Sign Up</Button>
+          </div>
+
+          <p className="mt-6 text-center text-sm font-semibold text-[#181725]">
+            Already have an account?{" "}
+            <button
+              onClick={() => navigate(ROUTES.LOGIN)}
+              className="text-[#53B175]"
+            >
+              Signin
+            </button>
+          </p>
         </div>
       </section>
     </main>
   );
 };
 
-export default SignInPage;
+export default SignupPage;

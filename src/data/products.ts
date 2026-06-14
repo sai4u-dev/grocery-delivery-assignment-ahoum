@@ -1,3 +1,4 @@
+import { appleImage, bananaImage } from "@/assets/images";
 import { ProductCategory, type Product } from "../types";
 
 export const products: Product[] = [
@@ -8,7 +9,7 @@ export const products: Product[] = [
       "Fresh organic bananas picked from high-quality farms. Perfect for breakfast, smoothies, and healthy snacks.",
     category: ProductCategory.FRUITS_VEGETABLES,
     brand: "Fresh Farm",
-    image: "/images/products/banana.png",
+    image: bananaImage,
     price: 4.99,
     oldPrice: 5.99,
     quantityLabel: "7pcs, Priceg",
@@ -24,7 +25,7 @@ export const products: Product[] = [
       "Crisp and juicy red apples with natural sweetness. Great for daily nutrition and lunch boxes.",
     category: ProductCategory.FRUITS_VEGETABLES,
     brand: "Nature Basket",
-    image: "/images/products/apple.png",
+    image: appleImage,
     price: 4.99,
     quantityLabel: "1kg, Priceg",
     rating: 4.7,

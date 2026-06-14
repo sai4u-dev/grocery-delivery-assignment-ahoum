@@ -19,7 +19,7 @@ const CartSummary = ({
   const total = subtotal + deliveryFee + tax;
 
   return (
-    <aside className="rounded-[24px] border border-[#E2E2E2] bg-white p-6 shadow-sm lg:sticky lg:top-28">
+    <aside className="rounded-[24px] border border-[#E2E2E2] bg-white p-6 shadow-sm lg:sticky lg:top-28 ">
       <h2 className="text-2xl font-bold text-[#181725]">Order Summary</h2>
 
       <div className="mt-6 space-y-4">
@@ -28,7 +28,7 @@ const CartSummary = ({
         <SummaryRow label="Tax" value={formatPrice(tax)} />
       </div>
 
-      <div className="mt-6 border-t border-[#E2E2E2] pt-5">
+      <div className="mt-6 border-t border-[#E2E2E2] pt-5 abs">
         <SummaryRow
           label="Total"
           value={formatPrice(total)}

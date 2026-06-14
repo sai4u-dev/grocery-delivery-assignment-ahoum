@@ -13,7 +13,7 @@ const CartItemCard = ({ item }: CartItemCardProps) => {
   const removeFromCart = useCartStore((state) => state.removeFromCart);
 
   return (
-    <article className="flex gap-5 border-b border-[#E2E2E2] py-6">
+    <article className="flex gap-2 border-b border-[#E2E2E2] py-4">
       <div className="flex h-24 w-24 shrink-0 items-center justify-center">
         <img
           src={item.product.image}

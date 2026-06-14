@@ -7,7 +7,7 @@ const ProtectedRoute = () => {
   const user = useAuthStore((state) => state.user);
 
   if (!user) {
-    return <Navigate to={ROUTES.SIGN_IN} replace />;
+    return <Navigate to={ROUTES.LOGIN} replace />;
   }
 
   return <Outlet />;

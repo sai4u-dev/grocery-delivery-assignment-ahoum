@@ -1,12 +1,22 @@
-import { useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 import { categories, products } from "../../data";
 import { SearchBar } from "../../components/search";
 import { CategoryCard, ProductGrid } from "../../components/product";
-import { DesktopSidebar } from "../../components/layout";
 import { OfferBanner, SectionHeader } from "../../components/common";
+import SkeletonGrid from "@/components/common/SkeletonGrid";
 
 const HomePage = () => {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 1500);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   const exclusiveOffers = useMemo(
     () => products.filter((product) => product.isExclusiveOffer).slice(0, 4),
     [],
@@ -17,16 +27,16 @@ const HomePage = () => {
     [],
   );
 
-  const groceries = useMemo(() => products.slice(0, 6), []);
-
   return (
     <main className="min-h-screen bg-white lg:bg-[#F8FAFB]">
       {/* Mobile */}
-      <section className="px-6 pb-8 pt-12 lg:hidden">
+      <section className="px-6 pb-8 lg:hidden">
         <div className="text-center">
-          <div className="text-4xl">🥕</div>
+          <div className="text-4xl">
+            <img src="./nectarIcon.svg" alt="nectar-icon" />
+          </div>
 
-          <p className="mt-3 text-[18px] font-semibold text-[#4C4F4D]">
+          <p className=" text-[18px] font-semibold text-[#4C4F4D]">
             📍 Dhaka, Banassre
           </p>
         </div>
@@ -41,12 +51,20 @@ const HomePage = () => {
 
         <section className="mt-8">
           <SectionHeader title="Exclusive Offer" />
-          <ProductGrid products={exclusiveOffers} />
+          {loading ? (
+            <SkeletonGrid count={8} />
+          ) : (
+            <ProductGrid products={exclusiveOffers} />
+          )}
         </section>
 
         <section className="mt-8">
           <SectionHeader title="Best Selling" />
-          <ProductGrid products={bestSelling} />
+          {loading ? (
+            <SkeletonGrid count={8} />
+          ) : (
+            <ProductGrid products={bestSelling} />
+          )}
         </section>
 
         <section className="mt-8">
@@ -62,8 +80,6 @@ const HomePage = () => {
       {/* Desktop */}
       <section className="hidden lg:block">
         <div className="mx-auto flex max-w-7xl gap-8 px-8 py-8">
-          <DesktopSidebar />
-
           <div className="min-w-0 flex-1">
             <div className="rounded-[32px] bg-white p-8 shadow-sm">
               <div className="flex items-start justify-between gap-8">
@@ -94,12 +110,20 @@ const HomePage = () => {
 
             <section className="mt-8 rounded-[32px] bg-white p-8 shadow-sm">
               <SectionHeader title="Exclusive Offer" />
-              <ProductGrid products={exclusiveOffers} />
+              {loading ? (
+                <SkeletonGrid count={8} />
+              ) : (
+                <ProductGrid products={exclusiveOffers} />
+              )}
             </section>
 
             <section className="mt-8 rounded-[32px] bg-white p-8 shadow-sm">
               <SectionHeader title="Best Selling" />
-              <ProductGrid products={bestSelling} />
+              {loading ? (
+                <SkeletonGrid count={8} />
+              ) : (
+                <ProductGrid products={bestSelling} />
+              )}
             </section>
 
             <section className="mt-8 rounded-[32px] bg-white p-8 shadow-sm">
