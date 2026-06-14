@@ -26,6 +26,7 @@ import OrderFailedPage from "../pages/checkout/OrderFailedPage";
 const AppRoutes = () => {
   return (
     <Routes>
+      <Route path="/home" element={<HomePage />} />
       <Route element={<AuthLayout />}>
         <Route path={ROUTES.SPLASH} element={<SplashPage />} />
         <Route path={ROUTES.ONBOARDING} element={<OnboardingPage />} />
